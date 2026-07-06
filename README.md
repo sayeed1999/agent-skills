@@ -4,6 +4,8 @@
 
 This repo teaches Cursor, Claude Code, and Codex how to write and review code: ask before guessing, change only what was asked, prefer simple fixes over big refactors, and ship a working minimal version first. Install once, then use your agent normally.
 
+This work was shaped by knowledge from two earlier skill repositories: [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) and [caveman](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md).
+
 ## What are agent skills?
 
 Agent skills are markdown files that tell an AI assistant *how* to behave on certain tasks. There is no API, package manager, or runtime — you copy files into a folder (or install a plugin), and the agent reads them when relevant.
