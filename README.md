@@ -1,6 +1,20 @@
 # Battle Tested Engineer
 
-Reusable agent skills for battle-tested engineering judgment — least code, fix the problem, don't break what works. Works with Claude Code, Cursor, and Codex.
+**Instructions for your AI coding agent** — not a library you import or an app you run.
+
+This repo teaches Cursor, Claude Code, and Codex how to write and review code: ask before guessing, change only what was asked, prefer simple fixes over big refactors, and ship a working minimal version first. Install once, then use your agent normally.
+
+## What are agent skills?
+
+Agent skills are markdown files that tell an AI assistant *how* to behave on certain tasks. There is no API, package manager, or runtime — you copy files into a folder (or install a plugin), and the agent reads them when relevant.
+
+| Concept | What it means here |
+|---------|-------------------|
+| **Skill** | On-demand instructions in `skills/battle-tested-engineer/SKILL.md`. The agent loads them when your task matches (code review, refactor, tests, UI work). |
+| **Rule / root file** | Always-on instructions (`CLAUDE.md`, `AGENTS.md`, or a Cursor rule). Guidelines apply every session in that project. |
+| **Plugin** | Claude Code marketplace install — same skill, no manual copy. |
+
+Most users want the **on-demand skill**: guidelines when coding, normal chat otherwise.
 
 ## What it does
 
@@ -83,6 +97,21 @@ cp -r skills/battle-tested-engineer .agents/skills/
 
 See [CODEX.md](CODEX.md) for `AGENTS.md` per-project install.
 
+## How to use it
+
+After install, you do not invoke the skill manually. Just open a project and talk to your agent as usual.
+
+1. **Install** using one of the methods in [Install](#install) above (pick your tool; on-demand skill is recommended).
+2. **Open a codebase** in Cursor, Claude Code, or Codex.
+3. **Ask for work** the way you already would — e.g. "fix the login 500", "review this diff", "add tests for checkout", "refactor this component".
+4. **Let the agent apply the guidelines** — it should clarify ambiguous asks, keep diffs small, and write minimal code. See [EXAMPLE.md](EXAMPLE.md) for good vs bad behavior.
+
+**On-demand skill:** loaded when the task fits (refactor, review, tests, UI). General questions may not trigger it.
+
+**Always-on rule or `CLAUDE.md` / `AGENTS.md`:** guidelines apply every message in that project, including ultra-terse style during code work.
+
+**Optional:** merge project-specific rules into the same files (see [Customization](#customization)).
+
 ## How to know it's working
 
 - Fewer unnecessary changes in diffs — only requested changes appear
@@ -121,7 +150,8 @@ agent-skills/
 ├── CLAUDE.md                # Claude Code per-project install
 ├── AGENTS.md                # Codex per-project install
 ├── CURSOR.md                # Cursor setup guide
-└── CODEX.md                 # Codex setup guide
+├── CODEX.md                 # Codex setup guide
+└── EXAMPLE.md               # Good vs bad agent behavior
 ```
 
 ## License
