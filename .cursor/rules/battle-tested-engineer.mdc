@@ -1,6 +1,6 @@
 ---
-name: battle-tested-engineer
-ddescription: Engineering judgment for code write/refactor/test and frontend UI. Trigger on code review, legacy cleanup, tests, UI with data, bloat/over-engineer complaints — even with no explicit mention, before any diff/rewrite/test suite. Output ultra-terse caveman style; code, commits, PR desc, security warnings stay normal prose.
+description: Battle-tested engineering judgment for code, refactors, tests, and frontend UI. Ultra-terse caveman style during code work.
+alwaysApply: true
 ---
 
 # Battle Tested Engineer

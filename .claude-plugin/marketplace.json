@@ -1,0 +1,30 @@
+{
+  "name": "agent-skills",
+  "id": "agent-skills",
+  "owner": {
+    "name": "sayeed1999"
+  },
+  "metadata": {
+    "description": "Battle-tested engineering judgment for code, refactors, tests, and frontend UI",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": "./",
+      "description": "Battle-tested engineering judgment: think before code, simplicity, surgical changes, data vs UI, goal-driven execution, tests, specs, ship then improve",
+      "version": "1.0.0",
+      "author": {
+        "name": "sayeed1999"
+      },
+      "keywords": [
+        "guidelines",
+        "best-practices",
+        "coding",
+        "engineering",
+        "testing"
+      ],
+      "category": "workflow"
+    }
+  ]
+}

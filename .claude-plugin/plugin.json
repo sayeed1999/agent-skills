@@ -1,0 +1,11 @@
+{
+  "name": "agent-skills",
+  "description": "Battle-tested engineering judgment for code, refactors, tests, and frontend UI with ultra-terse output style during code work",
+  "version": "1.0.0",
+  "author": {
+    "name": "sayeed1999"
+  },
+  "license": "MIT",
+  "keywords": ["guidelines", "best-practices", "coding", "engineering", "testing"],
+  "skills": ["./skills/battle-tested-engineer"]
+}
