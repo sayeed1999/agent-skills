@@ -11,29 +11,29 @@ This work was shaped by knowledge from two earlier skill repositories: [andrej-k
 ## Quick Start Guide
 
 1. Clone this repo:
-
-```bash
-git clone https://github.com/sayeed1999/agent-skills.git
-cd agent-skills
-```
+  ```bash
+    git clone https://github.com/sayeed1999/agent-skills.git
+    cd agent-skills
+  ```
 
 2. Copy the skill into your agent skills dir:
 
-User-wide:
+  **User-wide:**
+  ```bash
+  mkdir -p ~/.agents/skills
+  cp -r skills/battle-tested-engineer ~/.agents/skills/
+  ```
 
-```bash
-mkdir -p ~/.agents/skills
-cp -r skills/battle-tested-engineer ~/.agents/skills/
-```
+  **Project-scoped:**
+  ```bash
+    mkdir -p .agents/skills
+    cp -r skills/battle-tested-engineer .agents/skills/
+  ```
 
-Project-scoped:
-
-```bash
-mkdir -p .agents/skills
-cp -r skills/battle-tested-engineer .agents/skills/
-```
-
-3. In your AI agent, try a real prompt — e.g. `/battle-tested-engineer explain the codebase`.
+3. In your AI agent, try a real prompt — e.g., 
+  ```bash
+  /battle-tested-engineer explain the codebase
+  ```
 
 That's it!
 
@@ -59,15 +59,19 @@ Nine principles for writing, reviewing, and refactoring code — plus an ultra-t
 
 ## Install
 
-| Tool | Method | Recommended? |
-|------|--------|--------------|
-| **Any agent** | Copy `skills/battle-tested-engineer/` to `~/.agents/skills/` or `.agents/skills/` | Yes (on-demand) |
-| **Cursor** | Copy `skills/battle-tested-engineer/` to `~/.cursor/skills/` | Yes (on-demand) |
-| **Cursor** | Copy `.cursor/rules/battle-tested-engineer.mdc` to project `.cursor/rules/` | Optional (always-on) |
-| **Claude Code** | Plugin marketplace (see below) | Yes (global) |
-| **Claude Code** | `curl` `CLAUDE.md` into project root | Per-project |
-| **Codex** | Copy skill to `~/.codex/skills/` or `.agents/skills/` | Yes (on-demand) |
-| **Codex** | `curl` `AGENTS.md` into project root | Per-project |
+
+| Tool            | Method                                                                            | Recommended?         |
+| --------------- | --------------------------------------------------------------------------------- | -------------------- |
+| **Any agent**   | Copy `skills/battle-tested-engineer/` to `~/.agents/skills/` or `.agents/skills/` | Yes (on-demand)      |
+| **Cursor**      | Copy `skills/battle-tested-engineer/` to `~/.cursor/skills/`                      | Yes (on-demand)      |
+| **Cursor**      | Copy `.cursor/rules/battle-tested-engineer.mdc` to project `.cursor/rules/`       | Optional (always-on) |
+| **Claude Code** | Plugin marketplace (see below)                                                    | Yes (global)         |
+| **Claude Code** | `curl` `CLAUDE.md` into project root                                              | Per-project          |
+| **Codex**       | Copy skill to `~/.codex/skills/` or `.agents/skills/`                             | Yes (on-demand)      |
+| **Codex**       | `curl` `AGENTS.md` into project root                                              | Per-project          |
+
+
+
 
 ### Generic — `.agents` (any agent)
 
@@ -85,6 +89,8 @@ mkdir -p .agents/skills
 cp -r skills/battle-tested-engineer .agents/skills/
 ```
 
+
+
 ### Claude Code — Plugin (recommended)
 
 From within Claude Code, add the marketplace:
@@ -101,7 +107,7 @@ Then install:
 
 
 
-### Claude Code — Per-project CLAUDE.md
+### Claude Code — Per-project [CLAUDE.md](http://CLAUDE.md)
 
 New project:
 
