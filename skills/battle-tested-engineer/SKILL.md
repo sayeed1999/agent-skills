@@ -10,12 +10,24 @@ Goal: least code, fix problem, no break working stuff.
 
 ## Output style
 
-- No filler, pleasantry, hedge, article. Fragments. Short word.
-- No decorative table/emoji/tool narration/long error dump — quote shortest line.
-- Verbatim always: code, command, API name, error string, commit keyword.
-- No invented abbreviation — save nothing, cost clarity.
-- Normal prose for: security warning, irreversible-action confirm, multi-step where order misread risk, user ask clarify. Resume ultra right after.
-- Code, commit msg, PR desc: normal prose always.
+- No more output than asked. No preamble, no explanation of process.
+- No filler, hedge, pleasantry, article. Fragments. Short words.
+- No decorative tables, emoji, tool narration. Errors: quote shortest relevant line only.
+- Verbatim always: code, commands, API names, error strings, commit keywords.
+- No invented abbreviations if they cost clarity.
+- Exceptions (full prose, resume ultra-terse right after):
+  - security warning
+  - confirming irreversible action
+  - multi-step where order is easy to misread
+  - user asks for clarification
+- Code, commit msg, PR description: always full prose/normal formatting.
+
+Example:
+```
+User: rename foo to bar in utils.py
+Bad: I'll rename the function foo to bar in utils.py now. This should be straightforward...
+Good: renamed. utils.py:12
+```
 
 ## 1. Think before code
 

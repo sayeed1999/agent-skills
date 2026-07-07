@@ -2,48 +2,88 @@
 
 **Instructions for your AI coding agent** — not a library you import or an app you run.
 
-This repo teaches Cursor, Claude Code, and Codex how to write and review code: ask before guessing, change only what was asked, prefer simple fixes over big refactors, and ship a working minimal version first. Install once, then use your agent normally.
+This repo teaches your AI agent how to write and review code: ask before guessing, change only what was asked, prefer simple fixes over big refactors, and ship a working minimal version first.
+
+Supported by Claude, Cursor, Codex, Gemini and 15+ AI agents.
 
 This work was shaped by knowledge from two earlier skill repositories: [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) and [caveman](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md).
 
-## What are agent skills?
+## Quick Start Guide
 
-Agent skills are markdown files that tell an AI assistant *how* to behave on certain tasks. There is no API, package manager, or runtime — you copy files into a folder (or install a plugin), and the agent reads them when relevant.
+1. Clone this repo:
 
-| Concept | What it means here |
-|---------|-------------------|
-| **Skill** | On-demand instructions in `skills/battle-tested-engineer/SKILL.md`. The agent loads them when your task matches (code review, refactor, tests, UI work). |
-| **Rule / root file** | Always-on instructions (`CLAUDE.md`, `AGENTS.md`, or a Cursor rule). Guidelines apply every session in that project. |
-| **Plugin** | Claude Code marketplace install — same skill, no manual copy. |
+```bash
+git clone https://github.com/sayeed1999/agent-skills.git
+cd agent-skills
+```
 
-Most users want the **on-demand skill**: guidelines when coding, normal chat otherwise.
+2. Copy the skill into your agent skills dir:
+
+User-wide:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -r skills/battle-tested-engineer ~/.agents/skills/
+```
+
+Project-scoped:
+
+```bash
+mkdir -p .agents/skills
+cp -r skills/battle-tested-engineer .agents/skills/
+```
+
+3. In your AI agent, try a real prompt — e.g. `/battle-tested-engineer explain the codebase`.
+
+That's it!
 
 ## What it does
 
 Nine principles for writing, reviewing, and refactoring code — plus an ultra-terse "caveman" communication style during code work (code, commits, and PR descriptions stay normal prose).
 
-| Principle | Addresses |
-|-----------|-----------|
-| **Think before code** | Wrong assumptions, hidden confusion |
-| **Simplicity** | Over-engineering, speculative abstractions |
-| **Surgical change** | Drive-by refactors, orthogonal edits |
-| **Data vs UI** | Components owning data, scattered loading state |
-| **Goal-driven execution** | Vague tasks without verifiable success criteria |
-| **Tests** | Bloated test suites, testing internals |
-| **Propose spec when need** | Ambiguous requirements, wide blast radius |
-| **Ship then improve** | Premature optimization, big-bang refactors |
-| **Gut-check before output** | Silent over-build, under-delivered quality |
+
+| Principle                   | Addresses                                       |
+| --------------------------- | ----------------------------------------------- |
+| **Think before code**       | Wrong assumptions, hidden confusion             |
+| **Simplicity**              | Over-engineering, speculative abstractions      |
+| **Surgical change**         | Drive-by refactors, orthogonal edits            |
+| **Data vs UI**              | Components owning data, scattered loading state |
+| **Goal-driven execution**   | Vague tasks without verifiable success criteria |
+| **Tests**                   | Bloated test suites, testing internals          |
+| **Propose spec when need**  | Ambiguous requirements, wide blast radius       |
+| **Ship then improve**       | Premature optimization, big-bang refactors      |
+| **Gut-check before output** | Silent over-build, under-delivered quality      |
+
+
+
 
 ## Install
 
 | Tool | Method | Recommended? |
 |------|--------|--------------|
+| **Any agent** | Copy `skills/battle-tested-engineer/` to `~/.agents/skills/` or `.agents/skills/` | Yes (on-demand) |
 | **Cursor** | Copy `skills/battle-tested-engineer/` to `~/.cursor/skills/` | Yes (on-demand) |
 | **Cursor** | Copy `.cursor/rules/battle-tested-engineer.mdc` to project `.cursor/rules/` | Optional (always-on) |
 | **Claude Code** | Plugin marketplace (see below) | Yes (global) |
 | **Claude Code** | `curl` `CLAUDE.md` into project root | Per-project |
 | **Codex** | Copy skill to `~/.codex/skills/` or `.agents/skills/` | Yes (on-demand) |
 | **Codex** | `curl` `AGENTS.md` into project root | Per-project |
+
+### Generic — `.agents` (any agent)
+
+User-wide:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -r skills/battle-tested-engineer ~/.agents/skills/
+```
+
+Project-scoped:
+
+```bash
+mkdir -p .agents/skills
+cp -r skills/battle-tested-engineer .agents/skills/
+```
 
 ### Claude Code — Plugin (recommended)
 
@@ -59,6 +99,8 @@ Then install:
 /plugin install agent-skills@agent-skills
 ```
 
+
+
 ### Claude Code — Per-project CLAUDE.md
 
 New project:
@@ -73,6 +115,8 @@ Existing project (append):
 echo "" >> CLAUDE.md
 curl https://raw.githubusercontent.com/sayeed1999/agent-skills/main/CLAUDE.md >> CLAUDE.md
 ```
+
+
 
 ### Cursor — On-demand skill (recommended)
 
@@ -110,7 +154,7 @@ After install, you do not invoke the skill manually. Just open a project and tal
 
 **On-demand skill:** loaded when the task fits (refactor, review, tests, UI). General questions may not trigger it.
 
-**Always-on rule or `CLAUDE.md` / `AGENTS.md`:** guidelines apply every message in that project, including ultra-terse style during code work.
+**Always-on rule or** `CLAUDE.md` **/** `AGENTS.md`**:** guidelines apply every message in that project, including ultra-terse style during code work.
 
 **Optional:** merge project-specific rules into the same files (see [Customization](#customization)).
 
@@ -121,6 +165,8 @@ After install, you do not invoke the skill manually. Just open a project and tal
 - Characterization tests before risky behavior changes
 - Terse responses during code work; normal prose for commits and PRs
 - Clean, minimal PRs — no drive-by refactoring
+
+
 
 ## Customization
 
@@ -133,6 +179,8 @@ These guidelines merge with project-specific instructions. Add sections like:
 - All API endpoints must have tests
 - Follow error handling in `src/utils/errors.ts`
 ```
+
+
 
 ## Tradeoff note
 
@@ -155,6 +203,8 @@ agent-skills/
 ├── CODEX.md                 # Codex setup guide
 └── EXAMPLE.md               # Good vs bad agent behavior
 ```
+
+
 
 ## License
 
