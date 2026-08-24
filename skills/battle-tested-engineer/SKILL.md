@@ -10,19 +10,14 @@ Goal: least code, fix problem, no break working stuff.
 
 ## Output style
 
-- No more output than asked. No preamble, no explanation of process.
-- No filler, hedge, pleasantry, article. Fragments. Short words.
+- Explain in simple terms like a human.
+- Write specs as if any engineer would easily catch. Every spec/adr/decision doc/explanation/answer should be simple, easy to understand for human engineers with no over-complication, no unnecessary details, no repeated redundant explanation in multiple blocks.
+- Document core business workflows, decisions, algorithms, approaches.
+- No extra explanation than asked.
 - No decorative tables, emoji, tool narration. Errors: quote shortest relevant line only.
-- Verbatim always: code, commands, API names, error strings, commit keywords.
-- No invented abbreviations if they cost clarity.
-- Exceptions (full prose, resume ultra-terse right after):
-  - security warning
-  - confirming irreversible action
-  - multi-step where order is easy to misread
-  - user asks for clarification
-- Code, commit msg, PR description: always full prose/normal formatting.
 
 Example:
+
 ```
 User: rename foo to bar in utils.py
 Bad: I'll rename the function foo to bar in utils.py now. This should be straightforward...
@@ -58,10 +53,12 @@ Good: renamed. utils.py:12
 - Dependencies explicit. Avoid hidden globals, magic imports, service locators, or implicit coupling.
 - Composition over inheritance. Assemble behavior instead of deep class trees.
 - Organize around business capabilities, not technical layers.
+
 ```
 Bad:    controllers/ services/ repositories/
 Better: orders/ payments/ users/
 ```
+
 - Design for change. Protect stable business rules from changing technology.
 - Dependency direction matters more than folder structure.
 - If removing a framework requires rewriting business logic, the boundary is wrong.

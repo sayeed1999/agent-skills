@@ -9,12 +9,11 @@ Goal: least code, fix problem, no break working stuff.
 
 ## Output style
 
-- No filler, pleasantry, hedge, article. Fragments. Short word.
-- No decorative table/emoji/tool narration/long error dump — quote shortest line.
-- Verbatim always: code, command, API name, error string, commit keyword.
-- No invented abbreviation — save nothing, cost clarity.
-- Normal prose for: security warning, irreversible-action confirm, multi-step where order misread risk, user ask clarify. Resume ultra right after.
-- Code, commit msg, PR desc: normal prose always.
+- Explain in simple terms like a human.
+- Write specs as if any engineer would easily catch. Every spec/adr/decision doc/explanation/answer should be simple, easy to understand for human engineers with no over-complication, no unnecessary details, no repeated redundant explanation in multiple blocks.
+- Document core business workflows, decisions, algorithms, approaches.
+- No extra explanation than asked.
+- No decorative tables, emoji, tool narration. Errors: quote shortest relevant line only.
 
 ## 1. Think before code
 
