@@ -2,11 +2,11 @@
 
 **Instructions for your AI coding agent** — not a library you import or an app you run.
 
-This repo teaches your AI agent how to write and review code: ask before guessing, change only what was asked, prefer simple fixes over big refactors, and ship a working minimal version first.
+This repo teaches your AI agent how to write and review code: ask before guessing, change only what was asked, prefer small, surgical fixes, and ship a working minimal version first.
 
-Supported by Claude, Cursor, Codex, Gemini and 15+ AI agents.
+Supported by Claude, Cursor, Codex, Gemini and other agent platforms.
 
-This work was shaped by knowledge from two earlier skill repositories: [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) and [caveman](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md).
+This work was shaped by knowledge from earlier skill repositories such as [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
 
 ## Quick Start Guide
 
@@ -39,26 +39,20 @@ That's it!
 
 ## What it does
 
-Nine principles for writing, reviewing, and refactoring code — plus an ultra-terse "caveman" communication style during code work (code, commits, and PR descriptions stay normal prose).
+Ten principles for writing, reviewing, and refactoring code — plus a clear, concise output style for agent interactions (code, commits, and PR descriptions remain normal prose).
 
-
-| Principle                   | Addresses                                       |
-| --------------------------- | ----------------------------------------------- |
-| **Think before code**       | Wrong assumptions, hidden confusion             |
-| **Simplicity**              | Over-engineering, speculative abstractions      |
-| **Surgical change**         | Drive-by refactors, orthogonal edits            |
-| **Data vs UI**              | Components owning data, scattered loading state |
-| **Goal-driven execution**   | Vague tasks without verifiable success criteria |
-| **Tests**                   | Bloated test suites, testing internals          |
-| **Propose spec when need**  | Ambiguous requirements, wide blast radius       |
-| **Ship then improve**       | Premature optimization, big-bang refactors      |
-| **Gut-check before output** | Silent over-build, under-delivered quality      |
-
-
-
+- **Think before code**: state assumptions, avoid guessing.
+- **Simplicity**: prefer minimal, maintainable changes.
+- **Architecture boundaries**: keep business rules central.
+- **Surgical change**: touch only what's requested.
+- **Data vs UI**: separate data handling from rendering.
+- **Goal-driven execution**: require verifiable goals and tests.
+- **Tests**: small, high-value tests that protect behavior.
+- **Propose spec when needed**: add brief PRDs/ADRs for big changes.
+- **Ship then improve**: deliver minimal correct work, iterate.
+- **Gut-check before output**: ensure diffs are proportionate and assumptions explicit.
 
 ## Install
-
 
 | Tool            | Method                                                                            | Recommended?         |
 | --------------- | --------------------------------------------------------------------------------- | -------------------- |
@@ -160,17 +154,17 @@ After install, you do not invoke the skill manually. Just open a project and tal
 
 **On-demand skill:** loaded when the task fits (refactor, review, tests, UI). General questions may not trigger it.
 
-**Always-on rule or** `CLAUDE.md` **/** `AGENTS.md`**:** guidelines apply every message in that project, including ultra-terse style during code work.
+**Always-on rule or** `CLAUDE.md` **/** `AGENTS.md`**:** guidelines apply every message in that project, including the concise output style during code work.
 
 **Optional:** merge project-specific rules into the same files (see [Customization](#customization)).
 
 ## How to know it's working
 
-- Fewer unnecessary changes in diffs — only requested changes appear
-- Clarifying questions come before implementation, not after mistakes
-- Characterization tests before risky behavior changes
-- Terse responses during code work; normal prose for commits and PRs
-- Clean, minimal PRs — no drive-by refactoring
+- Fewer unnecessary changes in diffs; changes are narrowly scoped.
+- Clarifying questions appear before implementation.
+- Characterization tests for risky behavior changes.
+- Concise, human explanations and clear specs for decisions.
+- Clean, minimal PRs with focused diffs.
 
 
 
@@ -190,9 +184,9 @@ These guidelines merge with project-specific instructions. Add sections like:
 
 ## Tradeoff note
 
-These guidelines bias toward **caution over speed**. Ultra-terse output style is opt-in via the on-demand skill; it is not forced unless you install the always-apply Cursor rule or per-project `CLAUDE.md` / `AGENTS.md`.
+These guidelines bias toward **caution over speed**. The skill applies a concise, no-friction output style for code work; it is opt-in when using on-demand installs or always-apply rules in tools like Cursor or per-project `CLAUDE.md` / `AGENTS.md`.
 
-For trivial tasks (typo fixes, obvious one-liners), use judgment — not every change needs full rigor.
+Use judgment for trivial tasks — not every edit requires full process.
 
 ## Repository structure
 
