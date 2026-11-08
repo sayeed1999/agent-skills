@@ -1,11 +1,15 @@
 {
   "name": "agent-skills",
-  "description": "Battle-tested engineering judgment for code, refactors, tests, and frontend UI with ultra-terse output style during code work",
+  "description": "Three agent skills: general engineering guidance and Go HTTP and TCP server reliability checklists",
   "version": "1.0.0",
   "author": {
     "name": "sayeed1999"
   },
   "license": "MIT",
   "keywords": ["guidelines", "best-practices", "coding", "engineering", "testing"],
-  "skills": ["./skills/battle-tested-engineer"]
+  "skills": [
+    "./skills/battle-tested-engineer",
+    "./skills/go-http-server-reliability",
+    "./skills/go-tcp-server-reliability"
+  ]
 }
